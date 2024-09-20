@@ -27,14 +27,14 @@ const ListarProductosAdmin = () => {
   //realiza una acción después de que el componente se haya montado
   useEffect(() => {
     // Obtener productos
-    axios.get('http://127.0.0.1:8000/api/productos/')
+    axios.get('https://apptiendaback-1.onrender.com/api/productos/')
       .then(response => {
         setProductos(response.data);
       })
       .catch(error => console.error(error));
 
     // Obtener categorías
-    axios.get('http://127.0.0.1:8000/api/categorias/')
+    axios.get('https://apptiendaback-1.onrender.com/api/categorias/')
       .then(response => {
 
         setCategorias(response.data);
@@ -109,7 +109,7 @@ const ListarProductosAdmin = () => {
         ));
 
         // Realizar la actualización en el servidor
-        axios.patch(`http://127.0.0.1:8000/api/productos/${productId}/`, { [field]: newValue })
+        axios.patch(`https://apptiendaback-1.onrender.com/api/productos/${productId}/`, { [field]: newValue })
           .then(response => {
             setProductos(productos.map(produ =>
               produ.id === productId ? response.data : produ
@@ -175,7 +175,7 @@ const ListarProductosAdmin = () => {
     console.log(updateProducto.precio)
 
     console.log("Datos que se envían al servidor:", updateProducto);
-    axios.patch(`http://127.0.0.1:8000/api/productos/${editingProduct.id}/`, updateProducto)
+    axios.patch(`https://apptiendaback-1.onrender.com/api/productos/${editingProduct.id}/`, updateProducto)
       .then(response => {
         console.log("Respuesta del servidor:", response.data);
         setProductos(productos.map(produ => (produ.id === editingProduct.id ? response.data : produ)));

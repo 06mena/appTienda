@@ -38,7 +38,7 @@ const FormTips = ({ onTipAdded }) => {
       return;
     }
  
-    axios.post('http://127.0.0.1:8000/api/tips/', {
+    axios.post('https://apptiendaback-1.onrender.com/api/tips/', {
       titulo,
       descripcion,
       imagen_url: imagenUrl,

@@ -6,7 +6,7 @@ const Tips = ({ maxTips = 3, newTip }) => {
   const [tips, setTips] = useState([]);
 
   useEffect(() => {
-    axios.get('http://127.0.0.1:8000/api/tips/')
+    axios.get('https://apptiendaback-1.onrender.com/api/tips/')
       .then(response => {
         // Limitar el número de tips si maxTips está definido
         const tipsLimitados = maxTips ? response.data.slice(0, maxTips) : response.data;

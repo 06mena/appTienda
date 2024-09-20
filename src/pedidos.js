@@ -11,7 +11,7 @@ const Pedidos = () => {
   useEffect(() => {
     const cargarPedidos = async () => {
       try {
-        const response = await axios.get('http://127.0.0.1:8000/api/pedidos/');
+        const response = await axios.get('https://apptiendaback-1.onrender.com/api/pedidos/');
         setPedidos(response.data);
       } catch (error) {
         console.error('Error cargando pedidos:', error);

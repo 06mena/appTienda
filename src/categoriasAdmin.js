@@ -10,7 +10,7 @@ const CategoriasAdmin = ({ categoriaEnv }) => {
   // Obtener la información de la categoría
   useEffect(() => {
     if (categoriaEnv) {
-      axios.get(`http://127.0.0.1:8000/api/categorias/${categoriaEnv}`)
+      axios.get(`https://apptiendaback-1.onrender.com/api/categorias/${categoriaEnv}`)
         .then(response => {
           setCategoriaC(response.data);
         })
@@ -21,7 +21,7 @@ const CategoriasAdmin = ({ categoriaEnv }) => {
   // Obtener los productos de la categoría
   useEffect(() => {
     if (categoriaEnv) {
-      axios.get(`http://127.0.0.1:8000/api/productos/?categoria=${categoriaEnv}`)
+      axios.get(`https://apptiendaback-1.onrender.com/api/productos/?categoria=${categoriaEnv}`)
         .then(response => {
           setProductos(response.data);
         })

@@ -39,7 +39,7 @@ export const AuthProvider = ({ children }) => {
   const login = async (username, password) => {
     console.log('Intentando iniciar sesión');
     try {
-      const response = await fetch('http://127.0.0.1:8000/api/token/', {
+      const response = await fetch('https://apptiendaback-1.onrender.com/api/token/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, password }),  // Usamos username en lugar de email
@@ -66,7 +66,7 @@ export const AuthProvider = ({ children }) => {
   // Función para refrescar el access token
   const refreshAccessToken = async () => {
     try {
-      const response = await fetch('http://127.0.0.1:8000/api/token/refresh/', {
+      const response = await fetch('https://apptiendaback-1.onrender.com/api/token/refresh/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ refresh: refreshToken }),

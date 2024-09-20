@@ -20,7 +20,7 @@ const Alimento = () => {
 
   useEffect(() => {
     // Filtrar productos de la categoría "alimentos"
-    axios.get('http://127.0.0.1:8000/api/productos/')
+    axios.get('https://apptiendaback-1.onrender.com/api/productos/')
       .then(response => {
         const productosAlimentos = response.data.filter(producto => producto.categoria.id === 2 && producto.estado === 'Activo');
         setProductos(productosAlimentos);

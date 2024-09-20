@@ -6,7 +6,7 @@ import styles from './css/pedidos.module.css'; // Usamos estilos en CSS Modules
 const Pedido = ({ pedido }) => {
   const handleEstadoChange = async (nuevoEstado) => {
     try {
-      await axios.patch(`http://127.0.0.1:8000/api/pedidos/${pedido.id}/`, { estado: nuevoEstado });
+      await axios.patch(`https://apptiendaback-1.onrender.com/api/pedidos/${pedido.id}/`, { estado: nuevoEstado });
       Swal.fire('Estado actualizado', 'El estado del pedido ha sido actualizado', 'success');
     } catch (error) {
       console.error('Error actualizando estado:', error);

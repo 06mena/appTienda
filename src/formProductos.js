@@ -28,7 +28,7 @@ const FormProductos = () => {
 
   // Cargar categorías al montar el componente ------------------------------------------------------
   React.useEffect(() => {
-    axios.get('http://127.0.0.1:8000/api/categorias/') // Cambia esta URL si es necesario
+    axios.get('https://apptiendaback-1.onrender.com/api/categorias/') // Cambia esta URL si es necesario
       .then(response => {
         setCategorias(response.data);
       })
@@ -105,7 +105,7 @@ const FormProductos = () => {
 
 
     // // Envia los datos del formulario al backend
-    axios.post('http://127.0.0.1:8000/api/productos/', productoData)
+    axios.post('https://apptiendaback-1.onrender.com/api/productos/', productoData)
       .then(response => {
         // Maneja la respuesta exitosa del servidor
         console.log(response.data);

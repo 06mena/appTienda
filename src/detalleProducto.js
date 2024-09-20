@@ -20,7 +20,7 @@ const DetalleProducto = () => {
   const { addToCart } = useCart();
 
   useEffect(() => {
-    axios.get(`http://127.0.0.1:8000/api/productos/${id}/`)
+    axios.get(`https://apptiendaback-1.onrender.com/api/productos/${id}/`)
       .then(response => {
         setProducto(response.data);
         setRating(response.data.calificacion_promedio);
@@ -35,7 +35,7 @@ const DetalleProducto = () => {
   const handleRatingChange = (newRating) => {
     setRating(newRating);
     // Enviar calificación a la API
-    axios.post(`http://127.0.0.1:8000/api/productos/${id}/calificar/`, {
+    axios.post(`https://apptiendaback-1.onrender.com/api/productos/${id}/calificar/`, {
       calificacion: newRating
     }).then(response => {
       setProducto(prevProducto => ({

@@ -39,7 +39,7 @@ const BarraPrincipal = () => {
 
   const handleSearch = async (term) => {
     try {
-      const response = await axios.get(`http://127.0.0.1:8000/api/productos/?search=${term}`);
+      const response = await axios.get(`https://apptiendaback-1.onrender.com/api/productos/?search=${term}`);
       setSearchResults(response.data);
       setShowDropdown(true);
     } catch (error) {

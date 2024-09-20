@@ -96,7 +96,7 @@ const BarrasAdmin = () => {
 
   //OBTENER CATEGORÍAS - ----------------
   React.useEffect(() => {
-    axios.get('http://127.0.0.1:8000/api/categorias/') // Cambia esta URL si es necesario
+    axios.get('https://apptiendaback-1.onrender.com/api/categorias/') // Cambia esta URL si es necesario
       .then(response => {
         setCategoria(response.data);
       })

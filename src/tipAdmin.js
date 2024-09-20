@@ -11,7 +11,7 @@ const AdminTips = () => {
 
   // Cargar los tips al montar el componente
   useEffect(() => {
-    axios.get('http://127.0.0.1:8000/api/tips/')
+    axios.get('https://apptiendaback-1.onrender.com/api/tips/')
       .then(response => {
         setTips(response.data);
       })
@@ -31,7 +31,7 @@ const AdminTips = () => {
       cancelButtonText: 'Cancelar'
     }).then((result) => {
       if (result.isConfirmed) {
-        axios.delete(`http://127.0.0.1:8000/api/tips/${id}/`)
+        axios.delete(`https://apptiendaback-1.onrender.com/api/tips/${id}/`)
           .then(() => {
             setTips(tips.filter(tip => tip.id !== id));
             Swal.fire('¡Eliminado!', 'El tip ha sido eliminado.', 'success');
@@ -64,7 +64,7 @@ const AdminTips = () => {
       imagen_url: editingTip.imagen_url, // Asume que la imagen no se cambiará en este formulario
     };
 
-    axios.put(`http://127.0.0.1:8000/api/tips/${editingTip.id}/, updatedTip`)
+    axios.put(`https://apptiendaback-1.onrender.com/api/tips/${editingTip.id}/, updatedTip`)
       .then(response => {
         setTips(tips.map(tip => (tip.id === editingTip.id ? response.data : tip)));
         setEditingTip(null);

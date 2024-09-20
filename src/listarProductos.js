@@ -11,7 +11,7 @@ const ListarProductos = ({ maxProductos, sortOption }) => {
   const [isCartDrawerOpen, setIsCartDrawerOpen] = useState(false);
 
   useEffect(() => {
-    axios.get('http://127.0.0.1:8000/api/productos/')
+    axios.get('https://apptiendaback-1.onrender.com/api/productos/')
       .then(response => {
         let productosObtenidos = response.data;
 
