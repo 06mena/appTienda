@@ -18,7 +18,7 @@ const OfertasMostrar = () => {
   useEffect(() => {
     const fetchProductos = async () => {
       try {
-        const response = await axios.get('http://localhost:8000/api/productos-oferta/');
+        const response = await axios.get('https://apptiendaback-1.onrender.com/api/productos-oferta/');
         const productosActivos = response.data.filter(producto => producto.estado === 'Activo');
         setProductos(productosActivos);
       } catch (error) {

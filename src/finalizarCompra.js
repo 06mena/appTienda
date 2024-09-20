@@ -94,7 +94,7 @@ const Checkout = () => {
     };
 
     // Realizar la petición para crear el pedido
-    fetch("http://localhost:8000/api/crear-pedido/", {
+    fetch("https://apptiendaback-1.onrender.com/api/crear-pedido/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
