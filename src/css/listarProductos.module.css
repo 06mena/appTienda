@@ -1,0 +1,178 @@
+/* Contenedor de las tarjetas */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+  gap: 20px;
+}
+
+.cardText{
+  font-weight: bold;
+  font-size: 18px;
+  margin: 10px 0;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+/* Indicador de descuento */
+.offerTag {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #FF0000; /* Rojo para destacar la oferta */
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Contenedor del precio con descuento */
+.priceContainer {
+  display: flex;
+  flex-direction: row; /* Alinea los precios en fila */
+  justify-content: center; /* Centra los precios horizontalmente */
+  align-items: center; /* Alinea verticalmente los precios */
+  gap: 10px; 
+}
+
+/* Precio original tachado */
+.cardPriceOriginal {
+  font-size: 16px;
+  color: #888;
+  text-decoration: line-through;
+  margin-right: 10px;
+}
+
+/* Precio con descuento */
+.cardPrecio {
+  font-size: 18px;
+  font-weight: bold;
+  color: #FF0000;  /* Rojo para destacar el precio con descuento */
+}
+
+/* Precio normal en verde */
+.cardPrecioVerde {
+  font-weight: bold;
+  color: #28a745;
+}
+
+/* Contenedor de la fila de productos */
+.row {
+  display: flex;
+  flex-wrap: wrap; /* Permite que las tarjetas se envuelvan en múltiples líneas */
+  justify-content: center;
+  gap: 20px; /* Espacio entre las tarjetas */
+}
+
+/* Tarjeta del producto */
+.cardProducto {
+  position: relative;
+  flex: 1 1 18rem; /* Permite que las tarjetas crezcan y encojan, con un tamaño base */
+  max-width: 18rem; /* Ancho máximo */
+  min-width: 18rem; /* Ancho mínimo */
+  height: 100%; /* Para que todas tengan la misma altura */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  background-color: #fff;
+  margin-bottom: 1rem;
+  padding: 10px;
+}
+
+/* Efecto de escala en hover */
+.cardProducto:hover {
+  transform: scale(1.05);
+}
+
+/* Imagen del producto */
+.cardImg {
+  width: 100%;
+  height: 150px;
+  object-fit: contain; /* Mantén la proporción sin distorsionar */
+  margin-bottom: 10px;
+}
+
+/* Cuerpo de la tarjeta */
+.cardBody {
+  padding: 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Espacio entre los botones */
+}
+
+/* Contenedor de los botones */
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.botonOferta {
+  flex: 1;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+/* Estilo para los botones dentro de la tarjeta */
+.cardBody button {
+  margin: 5px;
+  padding: 10px;
+  border: none;
+  cursor: pointer; 
+  transition: background-color 0.3s ease;
+  border-radius: 50px;
+}
+
+/* Botón para añadir al carrito */
+.cardBody button:first-of-type {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.cardBody button:first-of-type:hover {
+  background-color: #218838;
+}
+
+/* Media Query para pantallas medianas (tablets) */
+@media (max-width: 1024px) and (min-width: 768px) {
+  .row {
+    justify-content: space-between; /* Ajusta el espaciado entre tarjetas */
+  }
+
+  .cardImg {
+    height: 130px; /* Ajusta la altura de la imagen para pantallas medianas */
+  }
+
+  .botonOferta {
+    font-size: 16px;
+  }
+}
+
+/* Media Query para pantallas pequeñas */
+@media (max-width: 768px) {
+  .cardProducto {
+    min-height: 400px;
+    max-width: 100%;
+  }
+
+  .row {
+    flex-direction: column; /* Cambia la disposición a columna en dispositivos pequeños */
+    align-items: center; /* Centra las tarjetas */
+  }
+
+  .botonOferta {
+    font-size: 16px;
+  }
+}
