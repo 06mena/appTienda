@@ -41,7 +41,10 @@ export const AuthProvider = ({ children }) => {
     try {
       const response = await fetch('https://apptiendaback-1.onrender.com/api/token/', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json' 
+        },
         body: JSON.stringify({ username, password }),  // Usamos username en lugar de email
       });
 
