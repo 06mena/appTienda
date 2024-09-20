@@ -13,7 +13,7 @@ const ProductosOferta = ({ productos: productosProp = [], limit, isHome }) => {
   useEffect(() => {
     const fetchProductos = async () => {
       try {
-        const response = await axios.get('http://localhost:8000/api/productos-oferta/');
+        const response = await axios.get('https://apptiendaback-1.onrender.com/api/productos-oferta/');
         // Filtrar productos activos
         const productosActivos = response.data.filter(producto => producto.estado === 'Activo');
         setProductos(productosActivos);
